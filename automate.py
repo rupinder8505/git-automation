@@ -54,7 +54,7 @@ def create_pr(title, body, source_branch, target_branch="main"):
 
 
 
-branch_name = 'test'
+branch_name = 'automate_code'
 commit_message = "commiting automate change"
 
 make_changes_locally()
