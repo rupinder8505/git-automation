@@ -11,7 +11,7 @@ git = repo.git
 
 def make_changes_locally():
     with open("test.py","a") as file:
-        file.write("#new sample test")
+        file.write("#new sample test\n")
 
 def create_new_branch(branch_name):
     if branch_name not in git.branch():
@@ -32,7 +32,11 @@ def delete_branch(branch_name):
     git.branch("-D", branch_name)
 
 def create_pr(title, body, source_branch, target_branch="main"):
-    pass
+    """
+    NOTE: this method expects GH_TOKEN env variable to be set
+    """
+    if not os.environ.get("GH_TOKEN"):
+        raise("GH token must be set")
 
 
 branch_name = 'test'
